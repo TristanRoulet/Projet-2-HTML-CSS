@@ -491,3 +491,181 @@ header {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    main {
+        padding: 0;
+        margin: 30px 0;
+    }
+
+/* Le header passe sur totue la largeur, avec le logo au milieu, le menu de navigation en dessous et different */
+    .header {
+        max-width: none;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-logo {
+        margin: 30px 0;
+    }
+    .header-nav {
+        width: 100%;
+        margin: 0;
+        gap: 0;
+    }
+    .nav-link {
+        width: 50%;
+        margin: 0;
+        border-bottom: solid;
+        border-width: 2px;
+        border-color: var(--main-bg-color);
+        padding: 0 0 15px 0;
+        text-align: center;
+    }
+    .nav-link[data-active=true], .nav-link:hover {
+        border-top: none;
+        padding-top: 0;
+    }
+
+/* La recherche s'etire sur la ligne et le bouton "Rehercher" devient une loupe */
+    .search {
+        padding-inline: 20px;
+    }
+    .search-form {
+        margin: 35px 0;
+        height: 50px;
+    }
+    .search-input {
+        width: calc( 100% - 80px );
+        text-align: left;
+    }
+    .search-button {
+        display: none;
+    }
+    .button-icon {
+        z-index: 1;
+        position: absolute;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        background-color: var(--main-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .button-icon .icon {
+        color: white;
+    }
+
+/* Les filtres passent en 2 par 2 */
+    .search-filters {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+    .filter-buttons {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+    .filter {
+        margin: auto;
+        width: 100%;
+        padding-right: 0px;
+        justify-content: left;
+        font-size: 14px;
+    }
+
+/* tres legere reduction de la marge haute et basse */
+    .info-text {
+        margin: 35px 0;
+    }
+
+/* populaires passe au-dessus de hebergements */
+    .hebergements-and-populaires {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
+/* les hebergements passent sur une colonne en changeant d'ordre et le background devient blanc */
+    .hebergements {
+        background-color: white;
+        padding: 20px;
+        gap: 15px;
+    }
+    .hebergements-cards {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 15px;
+    }
+    .hebergements-cards .card{
+        width: 100%;
+    }
+    .hebergement2 {
+        order: 5;
+    }
+    .hebergement5 {
+        order: -2;
+    } 
+
+/* les populaires passent egalement sur une colonne et les coins ne sont plus arrondis */
+    .populaires {
+        border-radius: 0;
+        padding: 20px;
+        row-gap: 15px;
+    }
+    .populaires-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+/* les activités passent aussi sur une colonne */
+    .activity {
+        margin-top: 25px;
+    }
+    .activity-cards {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+    .activity-cards .card {
+        width: 100%;
+    }
+    .activity-cards .activity-img {
+        height: 140px;
+    }
+
+/* Le contenu du footer passe en colonne */
+    .footer {
+        margin: 0;
+        flex-direction: column;
+        gap: 50px;
+        padding: 30px;
+    }
+    .footer-div {
+        width: 100%;
+    }
+}
+
+/* Rajout esthétique pour les petits téléphones*/
+@media (max-width: 350px) {
+/* Laisser le titre sur 2 lignes et le sous-titre sur 1 */
+    .search-title {
+        font-size: 21px;
+    }
+    .search-subtitle {
+        font-size: 14px;
+    }
+
+/* Garder le texte des filtres à l'interieur de ces derniers en restant sur 1 ligne */
+    .filter {
+        gap: 7px;
+        padding-left: 10px;
+    }
+    .filter-text {
+        font-size: 14px;
+    }
+}

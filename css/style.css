@@ -216,6 +216,7 @@ header {
 }
 
 .card {
+    height: 100%;
     background-color: white;
     border-radius: 20px;
     padding: 5px;

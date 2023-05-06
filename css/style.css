@@ -427,7 +427,67 @@ header {
 /* Footer end */
 
 
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+@media (max-width: 1440px) {
+/* marge changee pour le cote gauche du header */
+    .header {
+        margin: 0 50px 0 30px;
+    }
+}
+
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+/* Le titre fait toute la largeur pour que les filtres se placent dessous */
+    .search-filters {
+        flex-wrap: wrap;
+    }
+    .filter-title {
+        width: 100%;
+    }
+
+/* Eviter que le filtre "Nos pepites" passe en dessous des autres entre 840px et 768px */
+    .filter {
+        padding-inline: 15px;
+    }
+    .filter-text {
+        font-size: 16px;
+    }
+
+/* Hebergements et Populaires passe en colonne et les 2 sections font toute la largeur */
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+    .hebergements, .populaires {
+        width: 100%;
+    }
+
+/* Les cartes Populaires passent en ligne par 3 */
+    .populaires-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .populaires-cards .card-subtitle {
+        font-size: 14px;
+    }
+
+
+/* Reduction de la taille de l'image des activites */
+    .activity-cards .activity-img {
+        height: 200px;
+    }
+    .activity-text {
+        height: 70px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Rajout esthétique */
+@media (max-width: 870px) {
+/* Les activites passent sur 2 lignes car images trop etroites et texte sur 3 lignes */
+    .activity-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
